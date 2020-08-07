@@ -6,6 +6,8 @@ router.route("/");
 
 router.get('/', route.getAll);
 
+router.get('/lincolnElectric', route.lincolnElectric);
+
 router.get("/pepsiCo", route.pepsiCo);
 
 router.put("/handleDelete/:id", route.handleDelete);
