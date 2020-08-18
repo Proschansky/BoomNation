@@ -10,6 +10,7 @@ import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
+import { CSVLink } from "react-csv"
 
 import {
   useTable,
@@ -307,6 +308,7 @@ function Table({ columns, data }) {
   return (
     <>
       <img src="logo.png" />
+      <div><CSVLink data={data} filename={`BoomNation ${new Date().toDateString()}.csv`} >Download as CSV </CSVLink></div>
       {/* <div>
         <div>
           <IndeterminateCheckbox {...getToggleHideAllColumnsProps()} /> Toggle
@@ -508,6 +510,8 @@ export default class App extends React.Component {
     this.setState({ data });
     return data
   };
+
+
 
   render() {
     const { data } = this.state;
